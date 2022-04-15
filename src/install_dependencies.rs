@@ -3,7 +3,10 @@ use std::process::Command;
 pub fn install_packages(package_names: Vec<&str>) {
     let package_names = package_names.join(" ");
     let test = package_names.to_string();
-    println!(" installing {test}");
+
+    //TODO consolidate with requirements.txt
+    //TODO manage corresponding venv
+    println!("installing {test}");
     let _base_command = if cfg!(target_os = "windows") {
         Command::new("pwsh")
             .args(["/C", &format!("pip install {test}")])
