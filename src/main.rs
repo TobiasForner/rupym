@@ -1,3 +1,9 @@
+use std::process::Command;
+
+mod install_dependencies;
+
+use install_dependencies::install_packages;
+
 fn main() {
-    println!("Hello, world!");
+    install_packages(vec!["black", "virtualenv"]);
 }
